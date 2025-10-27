@@ -42,11 +42,11 @@ export default function Chat({ companyId }: { companyId: string }) {
 
   return (
     <div className="space-y-2">
-      <p className="font-medium">Deixe seu feedback</p>
+      
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-3 max-h-80 overflow-y-auto">
           {messages.length === 0 && (
-            <div className="flex items-center justify-center gap-3 rounded-lg border border-dashed border-input/60 bg-input/20 p-4 text-sm text-muted-foreground">
+            <div className="flex items-center justify-center gap-3 rounded-lg border border-dashed border-input/60 bg-input/20 p-4 text-sm text-muted-foreground mb-5">
               <div className="h-8 w-8 rounded-md bg-primary/15 flex items-center justify-center">
                 <MessageSquare className="h-4 w-4 text-primary" />
               </div>
@@ -85,9 +85,7 @@ export default function Chat({ companyId }: { companyId: string }) {
               </div>
             </div>
           ))}
-          {messages.length === 0 && (
-            <p className="text-sm text-muted-foreground">Seu histórico aparecerá aqui.</p>
-          )}
+ 
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="feedback" className="text-sm font-medium">
