@@ -16,7 +16,14 @@ type Message = {
 
 export default function Chat({ companyId }: { companyId: string }) {
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: crypto.randomUUID(),
+      role: "agent",
+      content:
+        "Olá! Eu sou a Maite, assistente virtual do Mercado Ferreirinha. Gostaria de saber como foi sua experiência conosco. Pode compartilhar seu feedback?",
+    },
+  ]);
 
   const sendMutation = useMutation({
     mutationFn: async (prompt: string) => {
@@ -44,7 +51,7 @@ export default function Chat({ companyId }: { companyId: string }) {
     <div className="space-y-2">
       
       <div className="flex flex-col gap-3">
-        <div className="flex flex-col gap-3 max-h-80 overflow-y-auto">
+        <div className="flex flex-col gap-3 max-h-[calc(100vh-200px)] overflow-y-auto">
           {messages.length === 0 && (
             <div className="flex items-center justify-center gap-3 rounded-lg border border-dashed border-input/60 bg-input/20 p-4 text-sm text-muted-foreground mb-5">
               <div className="h-8 w-8 rounded-md bg-primary/15 flex items-center justify-center">

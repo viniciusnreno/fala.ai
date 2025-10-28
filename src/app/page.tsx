@@ -31,10 +31,10 @@ export default function Home() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">Exemplo:</p>
-                <p className="font-medium">/c/acme</p>
+                <p className="font-medium">/c/ferrerinha</p>
               </div>
               <Button asChild>
-                <Link href="/c/acme">Ir para ACME</Link>
+                <Link href="/c/ferrerinha">Ir para ferrerinha</Link>
               </Button>
             </div>
           </CardContent>
